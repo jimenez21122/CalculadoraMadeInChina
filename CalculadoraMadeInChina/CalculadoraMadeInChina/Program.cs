@@ -4,26 +4,57 @@ namespace CalculadoraMadeInChina
 {
     class Program
     {
-        public static void ManageMainMenu()
+        public static void ManageAddMenu()
         {
-            while (true)
+            while(true)
+            {
+                UserInterface.PrintAddMenu();
+
+            }
+        }
+
+        public static void ManageMainMenu()
+
+        {
+            bool finished = false;
+
+            while (finished == false)
             {
                 UserInterface.PrintMainMenu();
                 int option = UserInterface.ReadOption();
-                if (option == 0)
-                    break;
-                else if (option == -1)
+
+                switch (option)
                 {
-                    System.Console.Clear()
-                    System.Console.WriteLine("opción no valida");
+                    case -1:
+                        System.Console.Clear();
+                        System.Console.WriteLine("opción no valida");
+                        break;
+                    case 0:
+                        finished = true;
+                        break;
+                    case 1:
+                        ManageAddMenu();
+
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
                 }
-                else if (option < 0 || option > 7)
-                { 
-                    System.Console.Clear()
-                    System.Console.WriteLine("opción no valida");
-                }
+
+
+
+                
             }
-            System.Console.WriteLine("Fin del me´nú principal");
+            System.Console.WriteLine("Fin del meenú principal");
         }
 
         static void Main(string[] args)

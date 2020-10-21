@@ -20,6 +20,12 @@ namespace CalculadoraMadeInChina
             System.Console.WriteLine("7) Realizar el sumatorio de una serie de números");
             System.Console.WriteLine("0) Salir de la aplicación");
         }
+        public static void PrintAddMenu()
+        {
+            System.Console.WriteLine("Suma de números");
+            System.Console.WriteLine(".......................");
+        }
+
 
         public static int ReadOption()
         {
@@ -27,16 +33,13 @@ namespace CalculadoraMadeInChina
 
             try
             {
-
                 int result = System.Convert.ToInt32(option);
                 return result;
             }
-            catch
+            catch (System.Exception e)
             {
-                
                 return -1;
             }
-            
         }
     }
 }
