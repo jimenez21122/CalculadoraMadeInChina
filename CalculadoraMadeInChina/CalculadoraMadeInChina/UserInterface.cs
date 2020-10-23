@@ -20,10 +20,17 @@ namespace CalculadoraMadeInChina
             System.Console.WriteLine("7) Realizar el sumatorio de una serie de números");
             System.Console.WriteLine("0) Salir de la aplicación");
         }
-        public static void PrintAddMenu()
+        public static void PrintAddHeader()
         {
             System.Console.WriteLine("Suma de números");
             System.Console.WriteLine(".......................");
+        }
+        
+        public static void PrintAddSubMenu()
+        {
+            System.Console.WriteLine("0) Salir de la aplicación");
+            System.Console.WriteLine("1) Sumar un nuevo número");
+            System.Console.WriteLine("2) Comenzar una nueva suma");
         }
 
 
