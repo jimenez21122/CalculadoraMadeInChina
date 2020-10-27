@@ -8,6 +8,7 @@ namespace CalculadoraMadeInChina
     {
         public static void PrintMainMenu()
         {
+            System.Console.Clear();
             System.Console.BackgroundColor = System.ConsoleColor.DarkBlue;
             System.Console.ForegroundColor = System.ConsoleColor.White;
             System.Console.WriteLine(" Calculadora Made in China");
@@ -30,8 +31,8 @@ namespace CalculadoraMadeInChina
 
         public static void PrintAddSubMenu()
         {
-            System.Console.WriteLine("0) Salir de la aplicación");
-            System.Console.WriteLine("1) Sumar un nuevo número");
+            System.Console.WriteLine("0) Volver al menú principal");
+            System.Console.WriteLine("1) Seguir sumando números");
             System.Console.WriteLine("2) Comenzar una nueva suma");
         }
 
@@ -52,18 +53,33 @@ namespace CalculadoraMadeInChina
         }
 
 
-        public static void ReadMenuOption( int Maxnumber, int Minnumber)
+        public static int ReadMenuOption(int Minnumber, int Maxnumber)
         {
             while (true)
             {
                 int option = ReadMenuOption();
-                if (Minnumber >= 0 && Maxnumber <= 2)
-                    else
-                    {
-
-                    }
-
+                if (option >= Minnumber && option <= Maxnumber)
+                {
+                    return option;
+                }
+                else
+                {
+                    System.Console.WriteLine("Opción fuera de rango");
+                }
             }
         }
+        public static void PrintSubHeader()
+        {
+            System.Console.WriteLine("Resta de números");
+            System.Console.WriteLine(".......................");
+        }
+
+        public static void PrintSubSubMenu()
+        {
+            System.Console.WriteLine("0) Volver al menú principal");
+            System.Console.WriteLine("1) Seguir restando números");
+            System.Console.WriteLine("2) Comenzar una nueva resta");
+        }
+
     }
 }
