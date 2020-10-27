@@ -8,9 +8,11 @@ namespace CalculadoraMadeInChina
     {
         public static void PrintMainMenu()
         {
-            
+            System.Console.BackgroundColor = System.ConsoleColor.DarkBlue;
+            System.Console.ForegroundColor = System.ConsoleColor.White;
             System.Console.WriteLine(" Calculadora Made in China");
             System.Console.WriteLine("......................................");
+            System.Console.ResetColor();
             System.Console.WriteLine("1) sunar una serie de números");
             System.Console.WriteLine("2) restar una serie de números");
             System.Console.WriteLine("3) multiplicar una serie de números");
@@ -25,7 +27,7 @@ namespace CalculadoraMadeInChina
             System.Console.WriteLine("Suma de números");
             System.Console.WriteLine(".......................");
         }
-        
+
         public static void PrintAddSubMenu()
         {
             System.Console.WriteLine("0) Salir de la aplicación");
@@ -34,7 +36,7 @@ namespace CalculadoraMadeInChina
         }
 
 
-        public static int ReadOption()
+        public static int ReadMenuOption()
         {
             string option = System.Console.ReadLine();
 
@@ -46,6 +48,21 @@ namespace CalculadoraMadeInChina
             catch (System.Exception e)
             {
                 return -1;
+            }
+        }
+
+
+        public static void ReadMenuOption( int Maxnumber, int Minnumber)
+        {
+            while (true)
+            {
+                int option = ReadMenuOption();
+                if (Minnumber >= 0 && Maxnumber <= 2)
+                    else
+                    {
+
+                    }
+
             }
         }
     }

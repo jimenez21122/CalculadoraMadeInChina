@@ -4,7 +4,7 @@ namespace CalculadoraMadeInChina
 {
     class Program
     {
-        public static void ManageAddSubMenu(int Acumuled)
+        public static int ManageAddSubMenu(int Acumuled)
         {
             while (true)
             {
@@ -14,15 +14,15 @@ namespace CalculadoraMadeInChina
                 Acumuled = Acumuled + number;
                 System.Console.WriteLine("LLevas acumulado: " + Acumuled);
                 UserInterface.PrintAddSubMenu();
-                int option = UserInterface.ReadOption();
+                int option = UserInterface.ReadMenuOption();
                 switch(option)
                 {
                     case 0:
-                        break;
+                        return 0;
                     case 1:
                         break;
                     case 2:
-                        break;
+                        return 2;
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace CalculadoraMadeInChina
                 int result = number1 + number2;
                 System.Console.WriteLine("El resultado es: " + result);
                 UserInterface.PrintAddSubMenu();
-                int option = UserInterface.ReadOption();
+                int option = UserInterface.ReadMenuOption();
                 if (option == 0)
                 {
                     //sirve tanto break como return
@@ -49,7 +49,11 @@ namespace CalculadoraMadeInChina
                 }
                 else if (option == 1)
                 {
-                    ManageAddSubMenu(result);
+                   int SubMenuOption = ManageAddSubMenu(result);
+                    if (SubMenuOption == 0)
+                    {
+                        return;
+                    }
                 }
             }
         }
@@ -62,7 +66,7 @@ namespace CalculadoraMadeInChina
             while (finished == false)
             {
                 UserInterface.PrintMainMenu();
-                int option = UserInterface.ReadOption();
+                int option = UserInterface.ReadMenuOption();
 
                 switch (option)
                 {
